@@ -1,4 +1,6 @@
 body {
+    position: absolute;
+    inset: 0;
     background-color: #aaa9a9;
     color: #1769a7;
     margin: 0;
@@ -78,6 +80,7 @@ a:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex: 1;
 }
 
 .inline div {
@@ -109,8 +112,6 @@ a:hover {
 }
 
 footer {
-    position: unset;
-    bottom: 0;
     background-color: #1769a7;
     width: 100%;
     color: white;
