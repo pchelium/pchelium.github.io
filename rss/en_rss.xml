@@ -4,9 +4,9 @@
         <title>pchelium</title>
         <link>https://pchelium.github.io</link>
         <description> </description>
-        <language>cs</language>
+        <language>en</language>
         <pubDate>29.8.2023 12:00:00 GMT</pubDate>
-        <atom:link rel="self" type="application/rss+xml" href="https://pchelium.github.io/rss/rss.xml" />
+        <atom:link rel="self" type="application/rss+xml" href="https://pchelium.github.io/rss/en_rss.xml" />
         <item>
             <title>MadLEDs release 1.0.0 </title>
             <link>/projects/madleds.html</link>
