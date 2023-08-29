@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+
+    <link rel="icon" href="/imgs/favicon.ico">
+    <title>MadLEDs</title>
+    <noscript>
+        <div style="background-color: yellow; color: black; padding: 10px;">
+            For full functionality of this website it is necessary to enable JavaScript in your browser!
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <div id="header">
+        <h1>MadLEDs</h1>
+    </div>
+    <div class="inline">
+
+        <div id="sidebar"></div>
+
+        <div id="main-content">
+            <div>
+
+                <h2><a href="https://github.com/pchelium/MadLEDs">Github page of this project</a></h2>
+                <h2> About this game </h2>
+                <ul>
+                    <li>MadLEDs is an observation game for the <b>ESP32 board</b> write in C++.</li>
+                    <li>This game is simple, one of the three LEDs lights up and you "catch" it by pressing the
+                        corresponding button. If you make it before the other LED is illuminated so you will be added a
+                        point if not, so you have no point. The time
+                        delay between LED switching can be set at the beginning of the game after the opening
+                        animation.</li>
+                    <li>With OLED display and battery status and with simple goal and that is: <b>FUN :)</b></li>
+                </ul>
+
+                <h2> Components for building </h2>
+                <ul>
+                    <li> <b>Some ESP32 board</b></li>
+                    <li> <b>0.96" 128x64 OLED display, I2C</b> </li>
+                    <li> <b>Fuel Gauge MAX17048 battery sensor</b> (this is not necessary, but is recommended).
+                        You
+                        can
+                        use any
+                        MAX1704x supported library listed in the library section, but you must modify the code
+                        before
+                        using it.</li>
+                    <li> <b>6 buttons</b></li>
+                    <li> <b>3 LEDs and resistors for LEDs</b>(you have to calculate the value of the
+                        resistor...)
+                    </li>
+                    <li> <b>And many cables...</b></li>
+                </ul>
+
+                <h2> Libraries</h2>
+                <ul>
+                    <li> <a href="https://github.com/adafruit/Adafruit_SSD1306" target="_blank">Adafruit_SSD1306</a>
+                        for
+                        display.</li>
+                    <li> <a href="https://github.com/sparkfun/SparkFun_MAX1704x_Fuel_Gauge_Arduino_Library"
+                            target="_blank">SparkFun_MAX1704x</a> for MAX17048
+                        battery
+                        sensor.</li>
+                </ul>
+
+                <h2>Overview of the user environment</h2>
+                <ul>
+                    <p></p>
+                    <li> <b>Home screen:</b></li><br>
+                    <img src="/imgs/explanations1.png" style="width:50%">
+                    <p></p>
+                    <li> <b>History screen:</b></li><br>
+                    <img src="/imgs/explanations2.png" style="width:50%">
+                    <p></p>
+                    <li> <b>Game progress screen:</b></li><br>
+                    <img src="/imgs/explanations3.png" style="width:50%">
+                    <p></p>
+                    <li> <b>Game end screen</b> (this screen is followed by the home screen):</li><br>
+                    <img src="/imgs/explanations4.png" style="width:50%">
+                    <p></p>
+                </ul>
+
+                [1] - Battery percentage <br>
+                [2] - Battery voltage <br>
+                [3] - <b>4</b> is min value, <b>9</b> is max value, <b>MIN</b> is a variable in the following order
+                (<b>MIN, TAR, MAX, RES</b>) <br>
+                [4] - <b>100</b> is resolution(RES), <b>50</b> is target(TAR) <br>
+                [5] - <b>0</b> is number of correct answers, <b>50</b> is maximum number of points(one correct = one
+                point) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>4</b> is min value, <b>9</b> is max value, <b>100</b> is resolution
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- The last number after *_* is the user identification number <br>
+                [6] - <b>0</b> is number of correct answers, <b>42</b> is number to finish, <b>50</b> is maximum number
+                of points <br>
+                [7] - <b>0</b> is number of correct answers, <b>50</b> is maximum number of points <br>
+
+                <h2>Explanation of setting modes</h2>
+                The time delay between the change of the LED is randomly generated in the range from number <b>MIN</b>
+                to number <b>MAX</b>, this number is then multiplied by the <b>RES</b> value and a time value in
+                milliseconds is created which indicates the time delay of the LED. <b>TAR</b> is your target (maximum points).
+
+                <h2>Description of all buttons</h2>
+                <h3>On home screen</h3>
+                <ul>
+                    <li><b>button1</b> - Switches between setting values for MIN,TAR, MAX, RES modes</li>
+                    <li><b>button2</b> - <i>Reduces</i> the value by 1 for the currently selected mode</li>
+                    <li><b>button3</b> - <i>Increases</i> the value by 1 for the currently selected mode</li>
+                    <li><b>acceptButton </b> - Start the game</li>
+                    <li><b>scrollButton </b> - Switches between Home screen and History screen</li>
+                    <li><b>sleepButton </b> - Puts the board into deep sleep or wakes it from deep sleep</li>
+                </ul>
+
+                <h3>On history screen</h3>
+                <ul>
+                    <li><b>scrollButton </b> - Switches between Home screen and History screen</li>
+                    <li><b>sleepButton </b> - Puts the board into deep sleep or wakes it from deep sleep</li>
+                </ul>
+
+                <h3>On game progress screen</h3>
+                <ul>
+                    <li><b>button1</b> - When pressed, it "grabs" LED 1</li>
+                    <li><b>button2</b> - When pressed, it "grabs" LED 2</li>
+                    <li><b>button3</b> - When pressed, it "grabs" LED 3</li>
+                    <li><b>acceptButton </b> - Exit the game</li>
+                    <li><b>sleepButton </b> - Puts the board into deep sleep or wakes it from deep sleep</li>
+                </ul>
+
+                <h3>On game end screen</h3>
+                <ul>
+                    <li><b>sleepButton </b> - Puts the board into deep sleep or wakes it from deep sleep</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        &copy; <span id="year"></span> pchelium. All rights reserved.
+    </footer>
+</body>
+
+</html>
+</script>
+</body>
+
+</html>

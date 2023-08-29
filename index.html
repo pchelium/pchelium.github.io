@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+
+    <link rel="icon" href="/imgs/favicon.ico">
+    <title>pchelium</title>
+    <noscript>
+        <div style="background-color: yellow; color: black; padding: 10px;">
+            For full functionality of this website it is necessary to enable JavaScript in your browser!
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Welcome to pchelium web!</h1>
+    </div>
+    <div class="inline">
+        <div id="sidebar"></div>
+        <div id="main-content">
+            <h1>NEWS</h1>
+            <div id="news-container"></div>
+            
+            <div class="inline">
+                <button class="button" onclick="previousButton()">Previous</button>
+                <button class="button" onclick="nextButton()">Next</button>
+            </div>
+        </div>
+        <footer>
+            &copy; <span id="year"></span> pchelium. All rights reserved.
+        </footer>
+</body>
+
+</html>

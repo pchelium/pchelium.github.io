@@ -1,0 +1,120 @@
+body {
+    background-color: #aaa9a9;
+    color: #1769a7;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00487e;
+}
+
+#header {
+    text-align: center;
+    padding: 0px;
+    background-color: #1769a7;
+    color: white;
+    font-size: 24px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#sidebar {
+    align-self: flex-start;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #ffffff;
+}
+
+#sidebar a {
+    color: black;
+    font-weight: bold;
+}
+
+#sidebar a:hover {
+    color: #00487e;
+}
+
+#main-content {
+    align-self: flex-end;
+    width: 100%;
+    max-width: 900px;
+    min-height: 541px;
+    padding: 10px;
+}
+
+.post {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #d8d8d8;
+}
+
+.post:hover {
+    background-color: #cacaca;
+}
+
+.post h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.post p {
+    color: #3e3e3e;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.inline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.inline div {
+    margin: 10px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #1769a7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #00487e;
+}
+
+@media only screen and (max-width: 768px) {
+    #sidebar,
+    #main-content {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+footer {
+    position: unset;
+    bottom: 0;
+    background-color: #1769a7;
+    width: 100%;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}

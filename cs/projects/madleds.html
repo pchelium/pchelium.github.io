@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cs/script.js"></script>
+
+    <link rel="icon" href="/imgs/favicon.ico">
+    <title>MadLEDs</title>
+    <noscript>
+        <div style="background-color: yellow; color: black; padding: 10px;">
+            Pro plnou funkčnost těchto webových stránek je nutné ve vašem prohlížeči povolit JavaScript!
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <div id="header">
+        <h1>MadLEDs</h1>
+    </div>
+    <div class="inline">
+
+        <div id="sidebar"></div>
+
+        <div id="main-content">
+            <div>
+
+                <h2><a href="https://github.com/pchelium/MadLEDs">
+                        Github stránka tohoto projektu</a></h2>
+                <h2> O této hře </h2>
+                <ul>
+                    <li>MadLEDs je postřehová hra pro desku <b>ESP32</b> napsaná v jazyce C++.</li>
+                    <li>Tato hra je jednoduchá, rozsvítí se jedna ze tří LED diod a vy ji stisknutím odpovídajícího
+                        tlačítka "chytíte".
+                        Pokud se vám to podaří dříve, než se rozsvítí druhá dioda, tak se vám přidá
+                        bod, pokud ne, tak nemáte žádný bod. Časovou
+                        prodlevu mezi přepínáním LED diod lze nastavit na začátku hry po skončení
+                        animace.</li>
+                    <li>S displejem OLED, stavem baterie a s jednoduchým cílem, a to je: <b>ZÁBAVA</b></li>
+                </ul>
+
+                <h2>Komponenty pro stavbu </h2>
+                <ul>
+                    <li> <b>Nějaká deska ESP32</b></li>
+                    <li> <b>0.96" 128x64 OLED displej, I2C</b> </li>
+                    <li> <b>Fuel Gauge MAX17048 bateriový senzor</b> (není to nutné, ale doporučuje se to.).
+                        Můžete použít libovolný MAX1704x, ale před použitím musíte upravit kód, který je uveden v části
+                        knihovny.</li>
+                    <li> <b>6 tlačítek</b></li>
+                    <li> <b>3 LED diody a rezistory pro LED diody</b>(musíte vypočítat hodnotu
+                        rezistoru...)
+                    </li>
+                    <li> <b>A mnoho drátů...</b></li>
+                </ul>
+
+                <h2> Knihovny</h2>
+                <ul>
+                    <li> <a href="https://github.com/adafruit/Adafruit_SSD1306" target="_blank">Adafruit_SSD1306</a>
+                        pro displej.</li>
+                    <li> <a href="https://github.com/sparkfun/SparkFun_MAX1704x_Fuel_Gauge_Arduino_Library"
+                            target="_blank">SparkFun_MAX1704x</a> pro MAX17048
+                        senzor baterie .</li>
+                </ul>
+
+                <h2>Přehled uživatelského prostředí</h2>
+                <ul>
+                    <p></p>
+                    <li> <b>Domovská obrazovka:</b></li><br>
+                    <img src="/imgs/explanations1.png" style="width:50%">
+                    <p></p>
+                    <li> <b>Obrazovka historie:</b></li><br>
+                    <img src="/imgs/explanations2.png" style="width:50%">
+                    <p></p>
+                    <li> <b>Obrazovka průběhu hry:</b></li><br>
+                    <img src="/imgs/explanations3.png" style="width:50%">
+                    <p></p>
+                    <li> <b>Obrazovka konce hry</b> (po této obrazovce následuje domovská obrazovka):</li><br>
+                    <img src="/imgs/explanations4.png" style="width:50%">
+                    <p></p>
+                </ul>
+
+                [1] - Procento baterie <br>
+                [2] - Napětí baterie <br>
+                [3] - <b>4</b> je minimální hodnota, <b>9</b> je maximální hodnota, <b>MIN</b> je následovánán režimy v
+                tomto pořadí
+                (<b>MIN, TAR, MAX, RES</b>) <br>
+                [4] - <b>100</b> je rozlišení(RES), <b>50</b> je cíl(TAR) <br>
+                [5] - <b>0</b> je počet správných odpovědí, <b>50</b> je maximální počet bodů (jedno správné "chycení" =
+                jeden
+                bod) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>4</b> je minimální hodnota, <b>9</b> je maximální hodnota, <b>100</b>
+                je rozlišení
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Poslední číslo za *_* je identifikační číslo uživatele. <br>
+                [6] - <b>0</b> je počet správných odpovědí, <b>42</b>je číslo do konce, <b>50</b> je maximální počet
+                bodů <br>
+                [7] - <b>0</b> je počet správných odpovědí, <b>50</b> je maximální počet bodů <br>
+
+                <h2>Vysvětlení režimů nastavení</h2>
+                Časová prodleva mezi změnou LED je náhodně generována v rozmezí od čísla <b>MIN</b>.
+                do čísla <b>MAX</b>, toto číslo je pak vynásobeno hodnotou <b>RES</b> a vzniklá časová hodnota v
+                milisekundách, udává časové zpoždění LED.<b>TAR</b> je váš cíl (maximální počet bodů).
+
+                <h2>Popis všech tlačítek</h2>
+                <h3>Na domovské obrazovce</h3>
+                <ul>
+                    <li><b>button1</b> - Přepíná mezi hodnotami nastavení pro režimy MIN,TAR, MAX, RES</li>
+                    <li><b>button2</b> -<i>Sníží</i> hodnotu o 1 pro aktuálně zvolený režim.</li>
+                    <li><b>button3</b> - <i>Zvýší</i> hodnotu o 1 pro aktuálně zvolený režim.</li>
+                    <li><b>acceptButton </b> - Spustí hru</li>
+                    <li><b>scrollButton </b> - Přepínání mezi domovskou obrazovkou a obrazovkou historie</li>
+                    <li><b>sleepButton </b> - Uvádí desku do hlubokého spánku nebo ji probouzí z hlubokého spánku.</li>
+                </ul>
+
+                <h3>Na obrazovce historie</h3>
+                <ul>
+                    <li><b>scrollButton </b> - Přepínání mezi domovskou obrazovkou a obrazovkou historie</li>
+                    <li><b>sleepButton </b> - Uvádí desku do hlubokého spánku nebo ji probouzí z hlubokého spánku.</li>
+                </ul>
+
+                <h3>Na obrazovce průběhu hry</h3>
+                <ul>
+                    <li><b>button1</b> - Po stisknutí "chytne" LED 1</li>
+                    <li><b>button2</b> - Po stisknutí "chytne" LED 2</li>
+                    <li><b>button3</b> - Po stisknutí "chytne" LED 3</li>
+                    <li><b>acceptButton </b> - Ukončí hru</li>
+                    <li><b>sleepButton </b> - Uvádí desku do hlubokého spánku nebo ji probouzí z hlubokého spánku.</li>
+                </ul>
+
+                <h3>Na obrazovce ukončení hry</h3>
+                <ul>
+                    <li><b>sleepButton </b> - Uvádí desku do hlubokého spánku nebo ji probouzí z hlubokého spánku.</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        &copy; <span id="year"></span> pchelium. Všechna práva vyhrazena.
+    </footer>
+</body>
+
+</html>
+</script>
+</body>
+
+</html>

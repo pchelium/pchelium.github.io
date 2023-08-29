@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+    <script src="/cs/script.js"></script>
+
+    <link rel="icon" href="/imgs/favicon.ico">
+    <title>pchelium</title>
+    <noscript>
+        <div style="background-color: yellow; color: black; padding: 10px;">
+            Pro plnou funkčnost těchto webových stránek je nutné ve vašem prohlížeči povolit JavaScript!
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Vítejte na webu pchelium!</h1>
+    </div>
+    <div class="inline">
+        <div id="sidebar"></div>
+        <div id="main-content">
+            <h1>NOVINKY</h1>
+            <div id="news-container"></div>
+            
+            <div class="inline">
+                <button class="button" onclick="previousButton()">Předchozí</button>
+                <button class="button" onclick="nextButton()">Další</button>
+            </div>
+        </div>
+        <footer>
+            &copy; <span id="year"></span> pchelium. Všechna práva vyhrazena.
+        </footer>
+</body>
+
+</html>
