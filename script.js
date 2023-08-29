@@ -29,14 +29,14 @@ function displayNews() {
   <a href="/projects/madleds.html">
   <div class="post">
       <h2>MadLEDs release 1.0.0</h2>
-      <p>Date: 30.08.2023</p>
+      <p>Date: 29.08.2023</p>
       <p>New C++ game for ESP32</p>
       <p>Read more...</p>
   </div>
   </a>
   <div class="post">
     <h2>Creation of this website</h2>
-    <p>Date: 30.08.2023</p>
+    <p>Date: 29.08.2023</p>
     <p>Today, this web site took a trip to the internet :)</p>
   </div>
   `;

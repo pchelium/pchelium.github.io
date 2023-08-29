@@ -5,18 +5,18 @@
         <link>https://pchelium.github.io</link>
         <description> </description>
         <language>en</language>
-        <pubDate>30.8.2023 12:00:00 GMT</pubDate>
+        <pubDate>29.8.2023 12:00:00 GMT</pubDate>
         <atom:link rel="self" type="application/rss+xml" href="https://pchelium.github.io/rss/rss.xml" />
         <item>
             <title>MadLEDs vydání 1.0.0 </title>
             <link>/cs/projects/madleds.html</link>
             <description>Nová hra v C++ pro ESP32</description>
-            <pubDate>30.08.2023 08:45:00 GMT</pubDate>
+            <pubDate>29.08.2023 15:30:00 GMT</pubDate>
         </item>
         <item>
             <title>Vytvoření těchto webových stránek</title>
             <description>Dnes se tato webová stránka vydala na svuj výlet do internetu :)</description>
-            <pubDate>30.08.2023 07:15:00 GMT</pubDate>
+            <pubDate>29.08.2023 15:30:00 GMT</pubDate>
         </item>
 
     </channel>

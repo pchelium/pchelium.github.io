@@ -29,14 +29,14 @@ function displayNews() {
     <a href="/cs/projects/madleds.html">
         <div class="post">
             <h2>MadLEDs vydání 1.0.0 </h2>
-            <p>Datum: 30.08.2023</p>
+            <p>Datum: 29.08.2023</p>
             <p>Nová hra v C++ pro ESP32</p>
             <p>Čtěte více...</p>
         </div>
     </a>
     <div class="post">
         <h2>Vytvoření těchto webových stránek</h2>
-        <p>Datum: 30.08.2023</p>
+        <p>Datum: 29.08.2023</p>
         <p>Dnes se tato webová stránka vydala na svuj výlet do internetu :)</p>
     </div>
     `;
