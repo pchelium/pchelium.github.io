@@ -8,6 +8,9 @@
     <meta name="description" content="MadLEDs is an observation game for the ESP32 board write in C++.">
 
     <link rel="stylesheet" href="/style.css">
+
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+    <meta name="amp-consent-blocking" content="amp-ad">
     <script src="/script.js"></script>
 
     <link rel="icon" href="/imgs/favicon.ico">
@@ -20,6 +23,26 @@
 </head>
 
 <body>
+    <script type="text/javascript" data-cmp-ab="1"
+        src="https://cdn.consentmanager.net/delivery/autoblocking/e07cc663d1be5.js"
+        data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net"
+        data-cmp-codesrc="0"></script>
+    <amp-consent id="ConsentManager" layout="nodisplay" type="ConsentManager">
+        <script type="application/json">
+      {
+        "postPromptUI": "postPromptUI",
+        "clientConfig": {
+          "cdid": "e07cc663d1be5",
+          "params": ""
+        }
+      }
+    </script>
+        <div id="postPromptUI">
+            <button on="tap:ConsentManager.prompt()" role="button">Manage privacy settings</button>
+        </div>
+    </amp-consent>
+    ¨
+
     <div id="header">
         <h1>MadLEDs</h1>
     </div>
@@ -105,7 +128,8 @@
                 <h2>Explanation of setting modes</h2>
                 The time delay between the change of the LED is randomly generated in the range from number <b>MIN</b>
                 to number <b>MAX</b>, this number is then multiplied by the <b>RES</b> value and a time value in
-                milliseconds is created which indicates the time delay of the LED. <b>TAR</b> is your target (maximum points).
+                milliseconds is created which indicates the time delay of the LED. <b>TAR</b> is your target (maximum
+                points).
 
                 <h2>Description of all buttons</h2>
                 <h3>On home screen</h3>
@@ -137,7 +161,7 @@
                 <ul>
                     <li><b>sleepButton </b> - Puts the board into deep sleep or wakes it from deep sleep</li>
                 </ul>
-                
+
             </div>
         </div>
     </div>

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/style.css">
+
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+    <meta name="amp-consent-blocking" content="amp-ad">
     <script src="/script.js"></script>
 
     <link rel="icon" href="/imgs/favicon.ico">
@@ -18,6 +21,25 @@
 </head>
 
 <body>
+    <script type="text/javascript" data-cmp-ab="1"
+        src="https://cdn.consentmanager.net/delivery/autoblocking/e07cc663d1be5.js"
+        data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net"
+        data-cmp-codesrc="0"></script>
+    <amp-consent id="ConsentManager" layout="nodisplay" type="ConsentManager">
+        <script type="application/json">
+          {
+            "postPromptUI": "postPromptUI",
+            "clientConfig": {
+              "cdid": "e07cc663d1be5",
+              "params": ""
+            }
+          }
+        </script>
+        <div id="postPromptUI">
+            <button on="tap:ConsentManager.prompt()" role="button">Manage privacy settings</button>
+        </div>
+    </amp-consent>
+    ¨
     <div id="header">
         <h1>RSS - settings</h1>
     </div>
@@ -26,12 +48,12 @@
         <div id="main-content">
             <h2>Choose your prefered RSS language and copy URL to your RSS reader</h2>
             <h4>Loading images via RSS may not be functional...</h4>
-            
+
             <p>English: https://pchelium.github.io/rss/en_rss.xml</p>
             <p>Czech: https://pchelium.github.io/rss/cs_rss.xml</p>
         </div>
 
-       <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V88D89J814"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
