@@ -26,23 +26,8 @@
 <body>
     <script type="text/javascript" data-cmp-ab="1"
         src="https://cdn.consentmanager.net/delivery/autoblocking/e07cc663d1be5.js"
-        data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net"
-        data-cmp-codesrc="0"></script>
-    <amp-consent id="ConsentManager" layout="nodisplay" type="ConsentManager">
-        <script type="application/json">
-          {
-            "postPromptUI": "postPromptUI",
-            "clientConfig": {
-              "cdid": "e07cc663d1be5",
-              "params": ""
-            }
-          }
+        data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="0">
         </script>
-        <div id="postPromptUI">
-            <button on="tap:ConsentManager.prompt()" role="button">Manage privacy settings</button>
-        </div>
-    </amp-consent>
-    ¨
 
     <div id="header">
         <h1>Vítejte na webu pchelium!</h1>
@@ -70,6 +55,21 @@
         </script>
         <footer>
             &copy; <span id="year"></span> pchelium. Všechna práva vyhrazena.
+
+            <amp-consent id="ConsentManager" layout="nodisplay" type="ConsentManager">
+                <script type="application/json">
+                  {
+                    "postPromptUI": "postPromptUI",
+                    "clientConfig": {
+                      "cdid": "e07cc663d1be5",
+                      "params": ""
+                    }
+                  }
+                </script>
+                <div id="postPromptUI">
+                    <button on="tap:ConsentManager.prompt()" role="button">Správa nastavení soukromí</button>
+                </div>
+            </amp-consent>
         </footer>
 </body>
 
