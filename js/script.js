@@ -23,7 +23,7 @@ window.onload = function () {
   `;
 
 	if (document.getElementById("year")) {
-		document.getElementById("year").innerText = "2023";
+		document.getElementById("year").innerText = "2023 - 2024";
 	}
 
 	displayNews();
