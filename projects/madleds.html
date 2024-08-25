@@ -9,7 +9,17 @@
 
 	<link rel="stylesheet" href="/style.css">
 
-	<script src=/js/script.js></script>
+	<script>
+		if (window.location.href.includes('/cs/')) {
+			let script = document.createElement('script');
+			script.src = '/cs/js/script.js';
+			document.head.appendChild(script);
+		} else {
+			let script = document.createElement('script');
+			script.src = '/js/script.js';
+			document.head.appendChild(script);
+		}
+	</script>
 
 	<link rel="icon" href="/imgs/favicon.ico">
 	<title>MadLEDs</title>
@@ -36,7 +46,8 @@
 		<div id="sidebar"></div>
 		<div id="main-content">
 			<div>
-				<h2><a href="https://github.com/pchelium/MadLEDs">Github page of this project</a></h2>
+				<h2>Code on <a href="https://github.com/pchelium/MadLEDs">Github</a></h2>
+
 				<h2> About this game </h2>
 				<ul>
 					<li>MadLEDs is an observation game for the <b>ESP32 board</b> write in C++.</li>
@@ -150,7 +161,7 @@
 	</div>
 
 	<footer>
-		<span id="year"></span> pchelium
+		<span id="year"></span>
 	</footer>
 </body>
 

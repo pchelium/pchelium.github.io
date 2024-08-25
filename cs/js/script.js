@@ -9,6 +9,7 @@ window.onload = function () {
 			<a class="dropbtn">Mé projekty</a>
 			<div class="dropdown-content">
 				<a href="/cs/projects/madleds.html"><b>MadLEDs</b></a>
+				<a href="/cs/projects/wifi-password-export.html"><b>wifi-password-export</b></a>
 			</div>
 		</li>
 		<li class="dropdown">
@@ -23,7 +24,7 @@ window.onload = function () {
   `;
 
 	if (document.getElementById("year")) {
-		document.getElementById("year").innerText = "2023 - 2024";
+		document.getElementById("year").innerText = "2023 - 2024 pchelium";
 	}
 
 	displayNews();
@@ -34,6 +35,14 @@ function displayNews() {
 		return;
 	}
 	document.getElementById("news-container").innerHTML = `
+	<a href="/cs/projects/wifi-password-export.html">
+	<div class="post">
+		<h2/>wifi-password-export</h2>
+		<p>Date: 25.08.2024</p>
+		<p>Jednoduchý skript pro Windows pro export wifi hesel</p>
+		<p>Čtěte více...</p>
+	</div>
+	</a>
     <a href="/cs/projects/madleds.html">
         <div class="post">
             <h2>MadLEDs vydání 1.0.0 </h2>

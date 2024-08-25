@@ -10,7 +10,17 @@
 
 	<link rel="stylesheet" href="/style.css">
 
-	<script src="/cs/js/script.js"></script>
+	<script>
+		if (window.location.href.includes('/cs/')) {
+			let script = document.createElement('script');
+			script.src = '/cs/js/script.js';
+			document.head.appendChild(script);
+		} else {
+			let script = document.createElement('script');
+			script.src = '/js/script.js';
+			document.head.appendChild(script);
+		}
+	</script>
 
 	<link rel="icon" href="/imgs/favicon.ico">
 	<title>pchelium</title>
@@ -47,7 +57,7 @@
 	</div>
 
 	<footer>
-		<span id="year"></span> pchelium
+		<span id="year"></span>
 	</footer>
 </body>
 

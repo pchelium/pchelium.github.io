@@ -9,6 +9,7 @@ window.onload = function () {
 			<a class="dropbtn">My projects</a>
 			<div class="dropdown-content">
 				<a href="/projects/madleds.html"><b>MadLEDs</b></a>
+				<a href="/projects/wifi-password-export.html"><b>wifi-password-export</b></a>
 			</div>
 		</li>
 		<li class="dropdown">
@@ -23,7 +24,7 @@ window.onload = function () {
   `;
 
 	if (document.getElementById("year")) {
-		document.getElementById("year").innerText = "2023 - 2024";
+		document.getElementById("year").innerText = "2023 - 2024 pchelium";
 	}
 
 	displayNews();
@@ -34,20 +35,28 @@ function displayNews() {
 		return;
 	}
 	document.getElementById("news-container").innerHTML = `
-  <a href="/projects/madleds.html">
-  <div class="post">
-      <h2>MadLEDs release 1.0.0</h2>
-      <p>Date: 29.08.2023</p>
-      <p>New C++ game for ESP32</p>
-      <p>Read more...</p>
-  </div>
-  </a>
-  <div class="post">
-    <h2>Creation of this website</h2>
-    <p>Date: 29.08.2023</p>
-    <p>Today, this web site took a trip to the internet :)</p>
-  </div>
-  `;
+	<a href="/projects/wifi-password-export.html">
+  	<div class="post">
+     	<h2/>wifi-password-export</h2>
+      	<p>Date: 25.08.2024</p>
+     	<p>Simple script for Windows to export wifi passwords</p>
+     	<p>Read more...</p>
+  	</div>
+  	</a>
+  	<a href="/projects/madleds.html">
+  	<div class="post">
+      	<h2>MadLEDs release 1.0.0</h2>
+      	<p>Date: 29.08.2023</p>
+     	<p>New C++ game for ESP32</p>
+     	<p>Read more...</p>
+  	</div>
+  	</a>
+  	<div class="post">
+    	<h2>Creation of this website</h2>
+    	<p>Date: 29.08.2023</p>
+    	<p>Today, this web site took a trip to the internet :)</p>
+  	</div>
+  	`;
 }
 
 function previousButton() {

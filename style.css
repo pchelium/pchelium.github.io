@@ -166,6 +166,19 @@ a:hover {
 	}
 }
 
+.copy-button {
+	cursor: pointer;
+	display: inline-block;
+	background-color: #1769a7;
+	color: white;
+	padding: 5px 10px;
+	border: none;
+	text-decoration: none;
+	margin: 10px;
+	font-size: 10px;
+	transition: background-color 0.3s ease;
+}
+
 footer {
 	background-color: #1769a7;
 	width: 100%;

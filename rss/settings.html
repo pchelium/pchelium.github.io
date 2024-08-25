@@ -7,7 +7,17 @@
 
 	<link rel="stylesheet" href="/style.css">
 
-	<script src="/js/script.js"></script>
+	<script>
+		if (window.location.href.includes('/cs/')) {
+			let script = document.createElement('script');
+			script.src = '/cs/js/script.js';
+			document.head.appendChild(script);
+		} else {
+			let script = document.createElement('script');
+			script.src = '/js/script.js';
+			document.head.appendChild(script);
+		}
+	</script>
 
 	<link rel="icon" href="/imgs/favicon.ico">
 	<title>RSS - settings</title>
@@ -25,7 +35,7 @@
 
 <body>
 	<div id="header">
-		<h1>RSS - settings</h1>
+		<h1>RSS</h1>
 	</div>
 
 	<div class="navbar" id="navbar"></div>
@@ -36,13 +46,17 @@
 			<h2>Choose your prefered RSS language and copy URL to your RSS reader</h2>
 			<h4>Loading images via RSS may not be functional...</h4>
 
-			<p>English: https://pchelium.github.io/rss/en_rss.xml</p>
-			<p>Czech: https://pchelium.github.io/rss/cs_rss.xml</p>
+			<p>English: https://pchelium.github.io/rss/en_rss.xml <button class="copy-button"
+					onclick="navigator.clipboard.writeText('https://pchelium.github.io/rss/en_rss.xml').then(() => this.innerText = 'Copied!');">Copy
+					text</button></p>
+			<p>Czech: https://pchelium.github.io/rss/cs_rss.xml <button class="copy-button"
+					onclick="navigator.clipboard.writeText('https://pchelium.github.io/rss/cs_rss.xml').then(() => this.innerText = 'Copied!');">Copy
+					text</button></p>
 		</div>
 	</div>
 
 	<footer>
-		<span id="year"></span> pchelium
+		<span id="year"></span>
 	</footer>
 </body>
 

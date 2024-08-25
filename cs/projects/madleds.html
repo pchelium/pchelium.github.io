@@ -9,7 +9,17 @@
 
 	<link rel="stylesheet" href="/style.css">
 
-	<script src="/cs/js/script.js"></script>
+	<script>
+		if (window.location.href.includes('/cs/')) {
+			let script = document.createElement('script');
+			script.src = '/cs/js/script.js';
+			document.head.appendChild(script);
+		} else {
+			let script = document.createElement('script');
+			script.src = '/js/script.js';
+			document.head.appendChild(script);
+		}
+	</script>
 
 	<link rel="icon" href="/imgs/favicon.ico">
 	<title>MadLEDs</title>
@@ -36,8 +46,8 @@
 		<div id="sidebar"></div>
 		<div id="main-content">
 			<div>
-				<h2><a href="https://github.com/pchelium/MadLEDs">
-						Github stránka tohoto projektu</a></h2>
+				<h2>Kód na <a href="https://github.com/pchelium/MadLEDs"> Githubu</a></h2>
+
 				<h2> O této hře </h2>
 				<ul>
 					<li>MadLEDs je postřehová hra pro desku <b>ESP32</b> napsaná v jazyce C++.</li>
@@ -47,7 +57,7 @@
 						bod, pokud ne, tak nemáte žádný bod. Časovou
 						prodlevu mezi přepínáním LED diod lze nastavit na začátku hry po skončení
 						animace.</li>
-					<li>S displejem OLED, stavem baterie a s jednoduchým cílem, a to je: <b>ZÁBAVA</b></li>
+					<li>S displejem OLED, stavem baterie a s jednoduchým cílem, a to je: <b>ZÁBAVA :)</b></li>
 				</ul>
 
 				<h2>Komponenty pro stavbu </h2>
@@ -148,7 +158,7 @@
 	</div>
 
 	<footer>
-		<span id="year"></span> pchelium
+		<span id="year"></span>
 	</footer>
 </body>
 
