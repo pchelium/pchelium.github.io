@@ -1,11 +1,10 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"
     version="2.0">
     <channel>
-        <title>pchelium</title>
+        <title>pchelium - cs</title>
         <link>https://pchelium.github.io</link>
         <description> </description>
         <language>cs</language>
-        <pubDate>Tue, 29 Aug 2023 14:00:00 GMT</pubDate>
         <atom:link rel="self" type="application/rss+xml" href="https://pchelium.github.io/rss/cs_rss.xml" />
 		<item>
             <title>wifi-password-export</title>
