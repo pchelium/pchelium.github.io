@@ -24,7 +24,7 @@ window.onload = function () {
   `;
 
 	if (document.getElementById("year")) {
-		document.getElementById("year").innerText = "2023 - 2024 pchelium";
+		document.getElementById("year").innerText = "2023 - 2025 pchelium";
 	}
 
 	displayNews();
